@@ -81,7 +81,15 @@ git merge nama-branch
 
 - `git checkout main` berpindah ke `main` branch.
 - `git pull origin main` memperbarui `main` branch lokal dengan perubahan terbaru dari remote.
-- `git merge nama-branch` menggabungkan branch yang diinginkan ke `main`.
+- `git merge nama-branch` menggabungkan branch yang diinginkan ke `main` di mesin lokal.
+
+> **Catatan Penting:** Perintah `git merge nama-branch` hanya menggabungkan branch di mesin lokal Anda. Agar perubahan ini terlihat di remote repository (GitHub), Anda perlu melakukan push:
+>
+> ```bash
+> git push origin main
+> ```
+>
+> Namun, jika Anda melakukan merge langsung melalui GitHub menggunakan PR, langkah ini tidak diperlukan karena penggabungan sudah terjadi di remote repository.
 
 ---
 
@@ -113,9 +121,7 @@ git pull origin main
 
 Command ini memperbarui branch lokal dengan perubahan terbaru dari `main` branch di remote repository.
 
-### Pentingnya Menarik Perubahan Terbaru
-
-Sebelum memulai pekerjaan baru, selalu pastikan untuk menarik perubahan terbaru dari `main` branch. Hal ini membantu menghindari konflik kode yang bisa terjadi jika branch lokal Anda tidak sinkron dengan perubahan terbaru di remote repository. Dengan begitu, proses integrasi kode menjadi lebih lancar.
+> **Catatan:** Selalu lakukan _pull_ sebelum memulai pekerjaan baru untuk menghindari konflik dengan perubahan terbaru yang mungkin telah dilakukan oleh anggota tim lain.
 
 ---
 
